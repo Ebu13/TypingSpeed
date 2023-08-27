@@ -7,10 +7,13 @@ app = FastAPI()
 # CORS ayarlarını yapılandırma
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Tüm kaynaklardan erişime izin vermek için "*" kullanabilirsiniz. Daha güvenli bir yapı için doğru etki alanlarını belirtin.
+    allow_origins=["*"],
+    # Tüm kaynaklardan erişime izin vermek için "*" kullanabilirsiniz.
+    # Daha güvenli bir yapı için doğru etki alanlarını belirtin.
     allow_methods=["GET"],
     allow_headers=["*"],
 )
+
 
 @app.get("/rows")
 def get_rows():

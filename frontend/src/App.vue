@@ -1,24 +1,27 @@
 <template>
   <div>
-    <HeaderC />
-    <InputText/>
-    <TextArea :rows="rows"></TextArea>
+    <h1>Typing Game</h1>
+    <TextArea :rows="rows" :count="count"></TextArea>
+    <InputText v-model="metin" />
+    <p>{{ metin }}</p>
+    <button @click="increaseCount">{{ count }}</button>
   </div>
 </template>
+
 <script>
-import HeaderC from "./components/HeaderC.vue";
-import TextArea from "./components/TextArea.vue";
-import InputText from "./components/InputText.vue";
+import TextArea from './components/TextArea.vue';
+import InputText from './components/InputText.vue';
 
 export default {
   components: {
-    HeaderC,
     TextArea,
     InputText,
   },
   data() {
     return {
-      rows: []
+      rows: [],
+      count: 0,
+      metin:"",
     };
   },
   mounted() {
@@ -27,6 +30,11 @@ export default {
       .then(data => {
         this.rows = data.rows;
       });
-  }
+  },
+  methods: {
+    increaseCount() {
+      this.count++;
+    },
+  },
 };
 </script>

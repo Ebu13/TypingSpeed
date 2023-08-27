@@ -1,27 +1,41 @@
 <template>
     <div>
-        <div>
-            <ul>
-                <li v-for="row in rows" :key="row.id">
-                    {{ row.row_data }}
-                </li>
-            </ul>
-        </div>
+      <div class="container">
+        <ul>
+          <li v-for="row in rows" :key="row.id">
+            <div class="box">
+              {{ row.row_data }}
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-</template>
+  </template>
   
-<script>
-export default {
+  <script>
+  export default {
     props: {
-        rows: {
-            type: Array,
-            required: true,
-        },
+      rows: {
+        type: Array,
+        required: true,
+      },
     },
-};
-</script>
+  };
+  </script>
   
-<style scoped>
-/* Gerekli stillendirme kodlarını buraya ekleyebilirsiniz */
-</style>
+  <style scoped>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .box {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+  }
+  </style>
   

@@ -2,21 +2,21 @@
   <div>
     <div v-if="!gameStarted">
       <h1>Typing Game</h1>
-      <button @click="startGame">Başla</button>
+      <button @click="startGame">Play</button>
     </div>
     <div v-else>
       <p>{{ currentSentence }}</p>
-      <input v-model="inputText" @keyup.enter="checkInput" :disabled="gameEnded" placeholder="Metin girin"
+      <input v-model="inputText" @keyup.enter="checkInput" :disabled="gameEnded" placeholder="Enter Text"
         style="margin: 10px; font-size: 20px;">
-      <p v-if="isCorrect">Doğru!</p>
-      <p v-else-if="isIncorrect">Hatalı!</p>
+      <p v-if="isCorrect">Correct!</p>
+      <p v-else-if="isIncorrect">Wrong!</p>
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <button v-if="!gameEnded" @click="nextSentence">Sonraki Cümle</button>
-        <button v-else @click="restartGame">Tekrar Oyna</button>
-        <button v-if="gameEnded" @click="exitGame" >Çıkış</button>
+        <button v-if="!gameEnded" @click="nextSentence">Next Sentence</button>
+        <button v-else @click="restartGame">Play Again</button>
+        <button v-if="gameEnded" @click="exitGame">Exit</button>
       </div>
       <div>
-        <p v-if="gameEnded">Skor: {{ getFormattedTime(currentTime) }}</p>
+        <p v-if="gameEnded">Score: {{ getFormattedTime(currentTime) }}</p>
       </div>
     </div>
   </div>
@@ -35,6 +35,7 @@ export default {
       currentTime: 0,
       gameStarted: false,
       gameEnded: false,
+      errorOccurred: false,
     };
   },
   mounted() {
@@ -45,6 +46,7 @@ export default {
       })
       .catch(error => {
         console.log(error);
+        this.errorOccurred = true;
       });
 
     setInterval(() => {
@@ -63,6 +65,7 @@ export default {
       this.isIncorrect = false;
       this.currentTime = 0;
       this.gameEnded = false;
+      this.errorOccurred = false;
     },
     exitGame() {
       this.gameStarted = false;
@@ -73,6 +76,7 @@ export default {
       this.isCorrect = false;
       this.isIncorrect = false;
       this.currentTime = 0;
+      this.errorOccurred = false;
     },
     checkInput() {
       if (this.inputText === this.currentSentence) {

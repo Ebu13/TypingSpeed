@@ -23,7 +23,7 @@ game data through API endpoints. The backend is developed using FastAPI and SQLi
    ```
    
 
-4. The API should be accessible at http://localhost:8000
+1. The API should be accessible at http://localhost:8000
 
     API Endpoints
     Get Rows
@@ -34,7 +34,7 @@ game data through API endpoints. The backend is developed using FastAPI and SQLi
     Description: Retrieves a list of rows containing sentence data for the typing game.
     
     Response Example:
-    {
+    <p>{
       "rows": [
         {
           "id": 1,
@@ -46,7 +46,7 @@ game data through API endpoints. The backend is developed using FastAPI and SQLi
         },
         ...
       ]
-    }
+    }</p>
 
 
 ## CORS Configuration

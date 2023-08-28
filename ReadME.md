@@ -3,7 +3,8 @@ You need to go to the address "http://127.0.0.1:8000/rows" for the API created f
 
 # FastAPI Typing Game Backend
 
-This project serves as the backend for the Typing Game application, providing access to game data through API endpoints. The backend is developed using FastAPI and SQLite.
+This project serves as the backend for the Typing Game application, providing access to 
+game data through API endpoints. The backend is developed using FastAPI and SQLite.
 
 ## Project Setup
 
@@ -19,6 +20,7 @@ Start the FastAPI server using the following command:
 
    ```bash
    uvicorn main:app --reload
+   ```
    
 
 The API should be accessible at http://localhost:8000
@@ -32,7 +34,6 @@ Method: GET
 Description: Retrieves a list of rows containing sentence data for the typing game.
 
 Response Example:
-
 {
   "rows": [
     {
@@ -46,6 +47,7 @@ Response Example:
     ...
   ]
 }
+
 
 ## CORS Configuration
 Cross-Origin Resource Sharing (CORS) is configured to allow access from all origins for simplicity. 

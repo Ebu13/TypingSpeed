@@ -13,9 +13,9 @@ game data through API endpoints. The backend is developed using FastAPI and SQLi
    ```bash
    pip install fastapi uvicorn sqlite3
 
-Make sure you have the database.sqlite3 file containing the required data.
+2. Make sure you have the database.sqlite3 file containing the required data.
 
-Start the FastAPI server using the following command:
+3. Start the FastAPI server using the following command:
 
 
    ```bash
@@ -23,7 +23,7 @@ Start the FastAPI server using the following command:
    ```
    
 
-The API should be accessible at http://localhost:8000
+4. The API should be accessible at http://localhost:8000
 
 API Endpoints
 Get Rows

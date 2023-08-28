@@ -57,6 +57,3 @@ For a more secure setup, modify the CORS configuration in main.py to specify all
 This project assumes you have a SQLite database named database.sqlite3 with a table named rows containing columns 
 id and row_data. Additional API endpoints and features can be added to enhance the backend functionality 
 based on your requirements.
-
-## License
-This project is licensed under the MIT License.

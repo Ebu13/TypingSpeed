@@ -23,7 +23,7 @@ The project has been developed using Vue.js and primarily features the following
     npm install
     ```
 
-Use the following command to run the project on a local server:
+3. Use the following command to run the project on a local server:
 
     ```bash
     npm run serve

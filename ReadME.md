@@ -16,8 +16,10 @@ Make sure you have the database.sqlite3 file containing the required data.
 
 Start the FastAPI server using the following command:
 
-    ```bash
-    uvicorn main:app --reload
+
+   ```bash
+   uvicorn main:app --reload
+   
 
 The API should be accessible at http://localhost:8000
 

@@ -18,7 +18,6 @@ Start the FastAPI server using the following command:
 
     ```bash
     uvicorn main:app --reload
-    ```
 
 The API should be accessible at http://localhost:8000
 
